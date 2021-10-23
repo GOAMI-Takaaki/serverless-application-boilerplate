@@ -32,8 +32,17 @@ asdf local nodejs 14.18.1
 node --version
 ```
 
+## Installed
+
 ### typescript
 
 ```sh
 npm install typescript
+```
+
+### cdk
+
+```
+npm install aws-cdk
+npx cdk init app --language typescript
 ```
