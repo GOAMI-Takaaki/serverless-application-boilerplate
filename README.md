@@ -23,3 +23,17 @@ https://github.com/asdf-vm/asdf-nodejs
 asdf plugin-add nodejs
 asdf list-all nodejs
 ```
+
+### nodejs
+
+```sh
+asdf install nodejs 14.18.1
+asdf local nodejs 14.18.1
+node --version
+```
+
+### typescript
+
+```sh
+npm install typescript
+```
