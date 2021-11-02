@@ -1,5 +1,7 @@
 # serverless-application-boilerplate
 
+This is monorepo.
+
 ## setup
 
 ### asdf 
@@ -40,6 +42,13 @@ node --version
 npm install typescript
 ```
 
+### Packages
+
+```
+mkdir Packages
+cd Packages
+```
+
 ### cdk
 
 ```
@@ -51,9 +60,8 @@ npx cdk init app --language typescript
 ### vue
 
 ```
-mkdir client
 npm install @vue/cli
-npx vue create app
+npx vue create client
 ```
 
 #### vue options
