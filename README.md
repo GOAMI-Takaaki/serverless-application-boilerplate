@@ -81,3 +81,16 @@ npx vue create client
 ? Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
 ? Save this as a preset for future projects? No]
 ```
+
+#### confirm vue 
+
+- Exec `npm run serve`
+- Open http://localhost:8080/
+
+
+## Test
+
+### cdk
+
+- run: `npm run build && npm test`
+- update snapshot: `npm test -- -u`
