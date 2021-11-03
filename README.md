@@ -55,6 +55,8 @@ cd Packages
 mkdir server
 npm install aws-cdk
 npx cdk init app --language typescript
+npm install --save-dev @aws-cdk/aws-apigateway @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-lambda-nodejs
+npm install --save-dev aws-sdk aws-lambda
 ```
 
 ### vue
@@ -84,13 +86,27 @@ npx vue create client
 
 #### confirm vue 
 
-- Exec `npm run serve`
+- Exec
+  - `npm run serve`
 - Open http://localhost:8080/
 
 
 ## Test
 
-### cdk
+At each directories.
 
-- run: `npm run build && npm test`
-- update snapshot: `npm test -- -u`
+- run test:
+  - `npm run build && npm test`
+- update snapshot:
+  - `npm test -- -u`
+
+## Update
+
+At each directories.
+
+- check updates:
+  - `npx npm-check-updates`
+- update package.json:
+  - `npx npm-check-updates`
+- update packages:
+  - `npm install`
