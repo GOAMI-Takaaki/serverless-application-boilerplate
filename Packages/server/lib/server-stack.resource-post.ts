@@ -9,19 +9,25 @@ export async function handler (
   context: APIGatewayEventRequestContext
 ): Promise<APIGatewayProxyResult> {
     const resourceType = event.pathParameters?.resourceType;
-      if (!resourceType) {
-        return {
-          statusCode: 400,
-          body: `Error: You are missing the path parameter resource type`,
-        };
-      }
-  
+    if (!resourceType) {
+      return {
+        statusCode: 400,
+        body: `Error: You are missing the path parameter resource type`,
+      };
+    }
+    const data = event.body;
+    if (!data) {
+      return {
+        statusCode: 400,
+        body: `Error: You are missing sending data`,
+      };
+    }
+    const resourceData = JSON.parse(data);
     const params = {
       TableName: resourceType,
-      Item: {
-          id: randomUUID(),
-        },
+      Item: resourceData
     };
+    params.Item.id = randomUUID();
   
     try {
       await db.put(params).promise();

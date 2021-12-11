@@ -15,13 +15,20 @@ export async function handler (
       body: `Error: You are missing the path parameter resource type or id`,
     };
   }
+  const data = event.body;
+  if (!data) {
+    return {
+      statusCode: 400,
+      body: `Error: You are missing sending data`,
+    };
+  }
+  const resourceData = JSON.parse(data);
   
   const params = {
     TableName: resourceType,
-    Item: {
-        id: resourceId,
-      },
+    Item: resourceData,
   };
+  params.Item.id = resourceId;
   
   try {
     await db.put(params).promise();
